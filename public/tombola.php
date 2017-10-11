@@ -1,0 +1,210 @@
+<?php
+require '../vendor/autoload.php';
+
+
+?>
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>The HTML5 Herald</title>
+    <link rel="stylesheet" href="tombola.css">
+</head>
+
+<body>
+<section>
+    <div class="x1"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x2"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x3"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x4"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x5"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x6"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x7"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x8"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x9"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x10"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x1"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x2"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x3"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x4"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x5"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x6"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x7"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x8"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x9"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x10"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x1"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x2"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x3"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x4"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x5"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x6"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x7"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x8"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x9"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x10"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x1"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x2"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x3"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x4"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x5"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x6"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x7"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x8"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x9"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x10"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x1"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x2"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x3"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x4"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x5"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x6"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x7"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x8"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x9"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x10"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x1"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x2"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x3"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x4"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x5"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x6"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x7"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x8"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x9"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x10"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x1"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x2"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x3"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x4"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x5"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x6"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x7"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x8"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x9"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x10"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x1"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x2"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x3"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x4"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x5"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x6"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x7"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x8"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x9"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x10"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x1"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x2"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x3"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x4"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x5"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x6"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x7"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x8"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x9"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x10"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x1"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x2"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x3"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x4"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x5"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x6"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x7"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x8"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x9"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x10"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x1"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x2"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x3"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x4"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x5"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x6"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x7"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x8"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x9"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x10"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x1"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x2"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x3"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x4"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x5"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x6"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x7"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x8"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x9"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x10"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x1"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x2"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x3"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x4"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x5"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x6"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x7"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x8"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x9"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x10"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x1"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x2"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x3"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x4"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x5"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x6"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x7"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x8"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x9"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x10"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x1"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x2"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x3"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x4"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x5"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x6"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x7"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x8"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x9"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x10"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x1"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x2"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x3"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x4"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x5"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x6"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x7"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x8"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x9"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x10"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x1"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x2"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x3"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x4"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x5"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x6"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x7"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x8"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x9"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x10"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x1"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x2"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x3"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x4"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x5"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x6"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x7"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x8"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x9"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x10"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x1"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x2"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x3"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x4"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x5"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x6"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x7"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x8"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x9"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+    <div class="x10"><img src="https://www.wanimo.com/veterinaire/images/articles/chat/chaton-diarrhee.jpg" class="bubble" /></div>
+</section>
+
+</body>
+</html>
