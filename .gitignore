@@ -1,1 +1,7 @@
+# IDE config files (should be in each contributor ~/.gitignore_global file)
+.idea
+*.sublime-project
+*.sublime-workspace
+
+# Composer
 vendor
