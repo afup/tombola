@@ -1,0 +1,15 @@
+{
+    "name": "afup/tombola",
+    "description": "Live tombola",
+    "type": "project",
+    "require": {
+        "cboden/ratchet": "^0.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Afup\\Tombola\\": "src"
+        }
+    },
+    "license": "MIT",
+    "minimum-stability": "dev"
+}
