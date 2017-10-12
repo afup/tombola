@@ -5,3 +5,7 @@
 
 # Composer
 vendor
+.idea
+bootstrap.php.cache
+cache
+sessions

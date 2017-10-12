@@ -3,7 +3,10 @@
     "description": "Live tombola",
     "type": "project",
     "require": {
-        "cboden/ratchet": "^0.4.0"
+        "cboden/ratchet": "^0.4.0",
+        "league/oauth2-github": "^2.0",
+        "symfony/http-foundation": "^3.3",
+        "symfony/symfony": "^3.3"
     },
     "autoload": {
         "psr-4": {
@@ -11,5 +14,6 @@
         }
     },
     "license": "MIT",
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
