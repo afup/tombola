@@ -7,10 +7,19 @@ use Ratchet\MessageComponentInterface;
 
 class TombolaMessage implements MessageComponentInterface
 {
+    /**
+     * @var \SplObjectStorage
+     */
     protected $clients;
 
+    /**
+     * @var \SplObjectStorage
+     */
+    protected $admins;
+
     public function __construct() {
-        $this->clients = new \SplObjectStorage;
+        $this->clients = new \SplObjectStorage();
+        $this->admins = new \SplObjectStorage();
     }
 
     function onOpen(ConnectionInterface $conn)
@@ -22,13 +31,28 @@ class TombolaMessage implements MessageComponentInterface
     }
 
     public function onMessage(ConnectionInterface $from, $msg) {
-        $numRecv = count($this->clients) - 1;
-        echo sprintf('Connection %d sending message "%s" to %d other connection%s' . "\n"
-            , $from->resourceId, $msg, $numRecv, $numRecv == 1 ? '' : 's');
+        $message = json_decode($msg, true);
 
-        foreach ($this->clients as $client) {
+        $admin = (bool)$message['admin'];
+
+        if (isset($message['type']) && $message['type'] === 'connection' && $admin === true) {
+            echo sprintf("New admin %s connected\n", $message['nickname']);
+            $this->admins->attach($from);
+            $this->clients->detach($from);
+
+            return;
+        }
+
+        // We send the messages to the clients XOR to the admins, regarding the source of the message
+        $fanOut = $this->clients;
+
+        if ($admin === false) {
+            $fanOut = $this->admins;
+        }
+
+        foreach ($fanOut as $client) {
             if ($from !== $client) {
-                // The sender is not the receiver, send to each client connected
+                // The sender is not the receiver, send to each other clients connected
                 $client->send($msg);
             }
         }
@@ -36,7 +60,13 @@ class TombolaMessage implements MessageComponentInterface
 
     public function onClose(ConnectionInterface $conn) {
         // The connection is closed, remove it, as we can no longer send it messages
-        $this->clients->detach($conn);
+
+        if ($this->clients->contains($conn)) {
+            $this->clients->detach($conn);
+        }
+        if ($this->admins->contains($conn)) {
+            $this->admins->detach($conn);
+        }
 
         echo "Connection {$conn->resourceId} has disconnected\n";
     }

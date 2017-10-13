@@ -3,13 +3,33 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>The HTML5 Herald</title>
-    <link rel="stylesheet" href="/tombola.css">
+    <title>Tombola AFUP</title>
 </head>
 
 <body>
-<section>
-    OK MERCI TU VAS POUVOIR JOUER
-</section>
+    <div>
+        <img src="{{ app.request.session.get('user').avatar }}&s=150" />
+    </div>
+<script>
+
+    {# @todo change url #}
+	var conn = new WebSocket('ws://localhost:8090');
+	conn.onopen = function(e) {
+		//console.log("Connection established!");
+		var user  = {
+			avatar: "{{ app.request.session.get('user').avatar }}&s=150",
+            nickname: "{{ app.request.session.get('user').nickname }}",
+            admin: 0
+        };
+
+		conn.send(JSON.stringify(user));
+
+		conn.close();
+	};
+
+	conn.onmessage = function(e) {
+
+	};
+</script>
 </body>
 </html>
