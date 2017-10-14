@@ -61,14 +61,24 @@ class TombolaKernel extends \Symfony\Component\HttpKernel\Kernel {
         ]);
 
         try {
-            $user = $this->getAuth()->getResourceOwner($token);$data = $user->toArray();
+            $user = $this->getAuth()->getResourceOwner($token);
+            $data = $user->toArray();
+
+            $admin = false;
+
+            if ($user->getNickname() === 'xavierleune') {
+                //Todo check if the user has write access to afup/web
+                $admin = true;
+            }
+
             $userData = [
                 'provider' => 'github',
                 'id' => $user->getId(),
                 'name' => $user->getName(),
                 'nickname' => $user->getNickname(),
                 'email' => $user->getEmail(),
-                'avatar' => isset($data['avatar_url']) ? $data['avatar_url'] : null
+                'avatar' => isset($data['avatar_url']) ? $data['avatar_url'] : null,
+                'admin' => $admin
             ];
 
             $userData['access-token'] = $token->getToken();
@@ -80,8 +90,7 @@ class TombolaKernel extends \Symfony\Component\HttpKernel\Kernel {
         }
 
         $redirect = '/tombola';
-        if ($userData['nickname'] === 'xavierleune') {
-            //Todo check if the user has write access to afup/web
+        if ($admin) {
             $redirect = '/admin';
         }
 
@@ -98,7 +107,26 @@ class TombolaKernel extends \Symfony\Component\HttpKernel\Kernel {
         return new \Symfony\Component\HttpFoundation\Response(
             $this->getContainer()->get('templating')->render(
                 dirname(__FILE__) . '/templates/admin.html.twig',
-                ['avatar' => $user['avatar']]
+                [
+                    'users' => [
+                        [
+                            'avatar' => $user['avatar'],
+                            'nickname' => $user['nickname']
+                        ]
+                    ]
+                ]
+            )
+        );
+    }
+
+    public function tombolaAction(\Symfony\Component\HttpFoundation\Request $request)
+    {
+        if ($request->getSession()->get('user') === null) {
+            return new \Symfony\Component\HttpFoundation\RedirectResponse('/login');
+        }
+        return new \Symfony\Component\HttpFoundation\Response(
+            $this->getContainer()->get('templating')->render(
+                dirname(__FILE__) . '/templates/tombola.html.twig'
             )
         );
     }
@@ -119,6 +147,11 @@ class TombolaKernel extends \Symfony\Component\HttpKernel\Kernel {
         }
 
         return $this->auth;
+    }
+
+    private function getMysqliConnection()
+    {
+
     }
 
 }

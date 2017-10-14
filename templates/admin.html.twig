@@ -3,13 +3,65 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>The HTML5 Herald</title>
+    <title>Tombola du Forum PHP 2017</title>
     <link rel="stylesheet" href="/tombola.css">
 </head>
 
 <body>
 <section>
-    <div class="x1"><img src="{{ avatar }}" class="bubble"/></div>
+
 </section>
+<h1><span>0</span> participants</h1>
 </body>
+<script>
+	var usersCount = 0;
+	var users = {{ users|json_encode|raw }};
+	var usernames = [];
+
+	var usersCountEl = document.querySelector('h1 span');
+	var section = document.querySelector('section');
+
+	var baseImage = document.createElement('img');
+	baseImage.classList.add("bubble");
+	var baseDiv = document.createElement('div');
+
+	var handleNewUser = function (user) {
+		if (usernames.indexOf(user.nickname) > -1) {
+			console.log('doublon');
+			return;
+        }
+
+		usersCount++;
+		usersCountEl.innerText = usersCount;
+
+		var div = baseDiv.cloneNode(false);
+		var img = baseImage.cloneNode(false);
+		img.src = user.avatar;
+		img.style = "left: " + Math.floor(Math.random() * 100) + "%";
+		div.appendChild(img);
+		div.classList.add("x" + usersCount%10);
+
+		section.appendChild(div);
+
+		usernames.push(user.nickname);
+	};
+
+	for (var user in users) {
+		handleNewUser(users[user]);
+	}
+
+    {# @todo change url #}
+	var conn = new WebSocket('ws://localhost:8090');
+	conn.onopen = function(e) {
+		conn.send(JSON.stringify({admin: 1, nickname: "{{ app.request.session.get('user').nickname }}", type: "connection"}));
+		console.log("Connection established!");
+	};
+
+	conn.onmessage = function(e) {
+		console.log(e.data);
+		var newUser = JSON.parse(e.data);
+		console.log(newUser);
+		handleNewUser(newUser);
+	};
+</script>
 </html>
