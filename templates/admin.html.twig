@@ -11,19 +11,24 @@
 <section>
 
 </section>
-<h1><span>0</span> participants</h1>
+<h1 class="title"><span>0</span> participants</h1>
+<h1 class="winner"></h1>
 </body>
 <script>
 	var usersCount = 0;
 	var users = {{ users|json_encode|raw }};
 	var usernames = [];
 
-	var usersCountEl = document.querySelector('h1 span');
+	var usersCountEl = document.querySelector('h1.title span');
 	var section = document.querySelector('section');
 
 	var baseImage = document.createElement('img');
 	baseImage.classList.add("bubble");
 	var baseDiv = document.createElement('div');
+
+	var body = document.querySelector('body');
+
+	var winnerEl = document.querySelector('h1.winner');
 
 	var handleNewUser = function (user) {
 		if (usernames.indexOf(user.nickname) > -1) {
@@ -63,5 +68,24 @@
 		console.log(newUser);
 		handleNewUser(newUser);
 	};
+
+	var draw = function()
+    {
+		var winningUser = users[Math.floor(Math.random() * users.length)];
+		document.querySelectorAll('.bubble').forEach(bubble => { bubble.classList.add('hidden'); });
+		document.querySelector('h1.title').classList.add('hidden');
+
+		winnerEl.textContent = ''; // Reset previous winner
+		var node = document.createTextNode(`${winningUser['name']} (${winningUser['nickname']})`);
+        winnerEl.appendChild(node);
+    };
+
+	var reset = function()
+    {
+		winnerEl.textContent = ''; // Reset previous winner
+
+		document.querySelectorAll('.bubble').forEach(bubble => { bubble.classList.remove('hidden'); });
+    	document.querySelector('h1.title').classList.remove('hidden');
+    }
 </script>
 </html>

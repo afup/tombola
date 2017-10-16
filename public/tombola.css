@@ -15,6 +15,7 @@ h1{
     top: 50%;
     transform: translate(-50%, -50%);
     font-size:6em;
+    text-align: center;
 }
 
 #background-wrap {
@@ -275,6 +276,24 @@ div.x0{
     position: absolute;
     width: 150px;
 }
+
+.hidden {
+    transform: translate(-1000px, -50%);
+    transition: all 1s linear 1s;
+    opacity: 0;
+}
+
+h1.winner{
+    opacity: 0;
+    transform: translate(1000px, -50%);
+    transition: all 1s ease-in-out 1s;
+}
+
+h1.winner:not(:empty) {
+    opacity: 1;
+    transform: translate(-50%, -50%)
+}
+
 
 /*
 .bubble:after {
