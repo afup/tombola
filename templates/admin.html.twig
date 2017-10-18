@@ -11,6 +11,8 @@
 <section>
 
 </section>
+<div class="logo"><img src="/forumphp-2017-vecto.svg" /></div>
+<div class="buttons"><button id="play" onclick="draw();">Play</button><button id="reset" onclick="reset()">Reset</button></div>
 <h1 class="title"><span>0</span> participants</h1>
 <h1 class="winner"></h1>
 </body>
@@ -30,8 +32,10 @@
 
 	var winnerEl = document.querySelector('h1.winner');
 
+	var winnerStyleBackup = null;
+
 	var handleNewUser = function (user) {
-		if (usernames.indexOf(user.nickname) > -1) {
+		if (typeof usernames[user.nickname] !== "undefined") {
 			console.log('doublon');
 			return;
         }
@@ -42,17 +46,28 @@
 		var div = baseDiv.cloneNode(false);
 		var img = baseImage.cloneNode(false);
 		img.src = user.avatar;
-		img.style = "left: " + Math.floor(Math.random() * 100) + "%";
+		img.style.left = Math.floor(Math.random() * 100) + "%";
+		img.style.top = (Math.floor(Math.random() * 450) - 225) + "px";
 		div.appendChild(img);
 		div.classList.add("x" + usersCount%10);
+		div.dataset.username = user.nickname;
 
 		section.appendChild(div);
 
-		usernames.push(user.nickname);
+		usernames[user.nickname] = user;
 	};
 
 	for (var user in users) {
-		handleNewUser(users[user]);
+        {# @todo remove for #}
+        {# var currentUser = users[user];
+		var originalNickname = currentUser['nickname']
+        for (var i = 0; i < 650; i++) {
+        	currentUser['nickname'] = originalNickname + i;
+			handleNewUser(currentUser);
+        }#}
+
+        handleNewUser(users[user]);
+
 	}
 
     {# @todo change url #}
@@ -71,8 +86,17 @@
 
 	var draw = function()
     {
-		var winningUser = users[Math.floor(Math.random() * users.length)];
+		var winningUser = usernames[Object.keys(usernames)[Math.floor(Math.random() * Object.keys(usernames).length)]];
 		document.querySelectorAll('.bubble').forEach(bubble => { bubble.classList.add('hidden'); });
+
+		var winnerDiv = document.querySelector(`div[data-username="${winningUser['nickname']}"]`);
+
+		winnerStyleBackup = winnerDiv.querySelector('img').getAttribute('style');
+		winnerDiv.querySelector('img').setAttribute('style', '');
+
+		winnerDiv.classList.add('winner-data');
+		winnerDiv.querySelector('img').classList.remove('hidden');
+
 		document.querySelector('h1.title').classList.add('hidden');
 
 		winnerEl.textContent = ''; // Reset previous winner
@@ -84,8 +108,14 @@
     {
 		winnerEl.textContent = ''; // Reset previous winner
 
+		if (winnerStyleBackup !== null) {
+			document.querySelector('.bubble:not(.hidden)').setAttribute('style', winnerStyleBackup);
+		}
+
 		document.querySelectorAll('.bubble').forEach(bubble => { bubble.classList.remove('hidden'); });
     	document.querySelector('h1.title').classList.remove('hidden');
+
+    	document.querySelector('div.winner-data').classList.remove('winner-data');
     }
 </script>
 </html>
