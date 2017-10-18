@@ -23,6 +23,23 @@ class TombolaKernel extends \Symfony\Component\HttpKernel\Kernel {
 
     protected function configureContainer(\Symfony\Component\DependencyInjection\ContainerBuilder $c, \Symfony\Component\Config\Loader\LoaderInterface $loader)
     {
+        $mysqli = new \Symfony\Component\DependencyInjection\Definition(
+            \mysqli::class,
+            [
+                getenv('MYSQL_HOST'),
+                getenv('MYSQL_LOGIN'),
+                getenv('MYSQL_PASSWORD'),
+                getenv('MYSQL_DATABASE'),
+                (int)getenv('MYSQL_PORT'),
+            ]
+        );
+
+        $userRep = new \Symfony\Component\DependencyInjection\Definition(
+            \Afup\Tombola\UserRepository::class,
+            [new \Symfony\Component\DependencyInjection\Reference('app.mysqli')]
+        );
+
+
         $c
             ->loadFromExtension('framework', [
                 'secret' => 'micr0',
@@ -32,6 +49,10 @@ class TombolaKernel extends \Symfony\Component\HttpKernel\Kernel {
                 ],
                 'templating' => ['engines' => ['twig']],
             ])
+            ->setDefinition('app.mysqli', $mysqli)
+        ;
+        $c
+            ->setDefinition('app.user_repository', $userRep)
         ;
     }
 
@@ -89,6 +110,8 @@ class TombolaKernel extends \Symfony\Component\HttpKernel\Kernel {
             die($e->getMessage());
         }
 
+        $this->getContainer()->get('app.user_repository')->insertUser($userData);
+
         $redirect = '/tombola';
         if ($admin) {
             $redirect = '/admin';
@@ -104,16 +127,13 @@ class TombolaKernel extends \Symfony\Component\HttpKernel\Kernel {
             throw new \Symfony\Component\Security\Core\Exception\AccessDeniedException();
         }
 
+        $users = $this->getContainer()->get('app.user_repository')->getUsers();
+
         return new \Symfony\Component\HttpFoundation\Response(
             $this->getContainer()->get('templating')->render(
                 dirname(__FILE__) . '/templates/admin.html.twig',
                 [
-                    'users' => [
-                        [
-                            'avatar' => $user['avatar'],
-                            'nickname' => $user['nickname']
-                        ]
-                    ]
+                    'users' => $users
                 ]
             )
         );
@@ -148,10 +168,4 @@ class TombolaKernel extends \Symfony\Component\HttpKernel\Kernel {
 
         return $this->auth;
     }
-
-    private function getMysqliConnection()
-    {
-
-    }
-
 }
