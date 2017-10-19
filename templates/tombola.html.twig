@@ -19,7 +19,8 @@
 		var user  = {
 			avatar: "{{ app.request.session.get('user').avatar }}&s=150",
             nickname: "{{ app.request.session.get('user').nickname }}",
-            admin: 0
+            admin: 0,
+            name: "{{ app.request.session.get('user').name }}"
         };
 
 		conn.send(JSON.stringify(user));

@@ -15,6 +15,8 @@ h1{
     top: 50%;
     transform: translate(-50%, -50%);
     font-size:6em;
+    text-align: center;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 
 #background-wrap {
@@ -51,7 +53,7 @@ h1{
     0% {
         transform: translateY(1000px);
     }
-    50% {
+    95% {
         opacity: 1;
     }
     100% {
@@ -274,6 +276,68 @@ div.x0{
     height: 150px;
     position: absolute;
     width: 150px;
+}
+
+.hidden {
+    transform: translate(-1000px, -50%);
+    transition: all 1s linear 1s;
+    opacity: 0;
+}
+
+h1.winner{
+    opacity: 0;
+    transform: translate(1000px, -50%);
+    transition: all 1s ease-in-out 1s;
+}
+
+h1.winner:not(:empty) {
+    opacity: 1;
+    transform: translate(-50%, -50%)
+}
+
+div.winner-data img {
+    animation: winner 1s ease-in-out;
+    transform: scale(1.5) translateX(-33%);
+}
+
+div.winner-data{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: none;
+}
+
+@keyframes winner {
+    0% {
+        transform: scale(0.2) translateX(0);
+    }
+    50% {
+        transform: scale(2.5) translateX(-20%);
+    }
+    100% {
+        transform: scale(1.5) translateX(-33%);
+    }
+}
+
+div.logo{
+    position: absolute;
+    padding: 1em;
+}
+
+div.buttons {
+    position: absolute;
+    right: 0;
+    padding: 1em;
+}
+div.buttons button{
+    display: inline-block;
+    background-color: white;
+    padding: 0.4em;
+    border:none;
+}
+div.buttons button:first-child{
+    margin-right:1em;
 }
 
 /*
