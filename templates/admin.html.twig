@@ -70,8 +70,7 @@
 
 	}
 
-    {# @todo change url #}
-	var conn = new WebSocket('ws://localhost:8090');
+	var conn = new WebSocket('ws://{{ app.request.host }}:8090');
 	conn.onopen = function(e) {
 		conn.send(JSON.stringify({admin: 1, nickname: "{{ app.request.session.get('user').nickname }}", type: "connection"}));
 		console.log("Connection established!");
@@ -102,6 +101,9 @@
 		winnerEl.textContent = ''; // Reset previous winner
 		var node = document.createTextNode(`${winningUser['name']} (${winningUser['nickname']})`);
         winnerEl.appendChild(node);
+
+        conn.send(JSON.stringify({type: "winner", winner: winningUser}));
+
     };
 
 	var reset = function()

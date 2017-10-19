@@ -1,0 +1,16 @@
+body{
+    background-color: #4c6eaf;
+    text-align: center;
+    font: 100% Lato, Arial, Sans Serif;
+    color: white;
+}
+
+div.logo{
+    margin: 1em;
+}
+
+img.avatar{
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
