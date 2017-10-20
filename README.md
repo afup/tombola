@@ -20,9 +20,11 @@ Nécessaire:
 
 * PHP 7.0+
 * Mysql
+* Composer
 
 Tester:
 
+* **Installer les dépendances:** composer install
 * **Créer et importer la BDD:** Les fichiers à importer sont versionnés dans sql/.
 * **Lancer le webserver de PHP:** dans le répertoire public: `GITHUB_CLIENT_ID=[ClientId] GITHUB_CLIENT_SECRET="[ClientSecret]" MYSQL_HOST=[IP Mysql] MYSQL_LOGIN=[user mysql] MYSQL_PASSWORD=[Pwd mysql] MYSQL_PORT=[Port Mysql] MYSQL_DATABASE=[Nom de la bdd] php -S 127.0.0.1:8080`
 * **Lancer le serveur de websocket:** à la racine du projet: `php server.php`
