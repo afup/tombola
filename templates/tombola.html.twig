@@ -2,18 +2,32 @@
 
 <html lang="en">
 <head>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta charset="utf-8">
     <title>Tombola AFUP</title>
+    <link rel="stylesheet" href="/player.css" />
 </head>
 
 <body>
-    <div>
-        <img src="{{ app.request.session.get('user').avatar }}&s=150" />
+<section>
+    <div class="logo">
+        <img src="/forumphp-2017-vecto.svg" />
     </div>
+    <h1>Tirage au sort - Forum PHP 2017</h1>
+    <p class="message">
+        Enregistrement de votre participation en cours...
+    </p>
+    <p>
+        Connecté avec les informations suivantes:<br />
+        {{ app.request.session.get('user').name }} ({{ app.request.session.get('user').nickname }})
+    </p>
+    <img src="{{ app.request.session.get('user').avatar }}&s=75" class="avatar" />
+</section>
 <script>
+    var messageEl = document.querySelector('p.message');
 
-    {# @todo change url #}
-	var conn = new WebSocket('ws://localhost:8090');
+	var conn = new WebSocket('ws://{{ app.request.host }}:8090');
 	conn.onopen = function(e) {
 		//console.log("Connection established!");
 		var user  = {
@@ -24,6 +38,7 @@
         };
 
 		conn.send(JSON.stringify(user));
+		messageEl.textContent = 'Merci ! Votre participation a bien été enregistrée !';
 
 		conn.close();
 	};
@@ -31,6 +46,11 @@
 	conn.onmessage = function(e) {
 
 	};
+
+	conn.onerror = function(e) {
+		messageEl.textContent = 'Une erreur est survenue :\'( Essayez d\'actualiser cette page';
+
+    }
 </script>
 </body>
 </html>
