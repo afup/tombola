@@ -69,6 +69,8 @@ class TombolaKernel extends \Symfony\Component\HttpKernel\Kernel {
 
     public function callbackAction(\Symfony\Component\HttpFoundation\Request $request)
     {
+        $adminUsers = explode(',', getenv('AFUP_TOMBOLA_ADMIN_USERS'));
+
         $session = $request->getSession();
         $session->start();
         if ($request->query->get('state') !== $session->get('oauth2state')) {
@@ -85,12 +87,7 @@ class TombolaKernel extends \Symfony\Component\HttpKernel\Kernel {
             $user = $this->getAuth()->getResourceOwner($token);
             $data = $user->toArray();
 
-            $admin = false;
-
-            if ($user->getNickname() === 'xavierleune') {
-                //Todo check if the user has write access to afup/web
-                $admin = true;
-            }
+            $admin = in_array($user->getNickname(), $adminUsers);
 
             $userData = [
                 'provider' => 'github',
@@ -99,7 +96,7 @@ class TombolaKernel extends \Symfony\Component\HttpKernel\Kernel {
                 'nickname' => $user->getNickname(),
                 'email' => $user->getEmail(),
                 'avatar' => isset($data['avatar_url']) ? $data['avatar_url'] : null,
-                'admin' => $admin
+                'admin' => $admin,
             ];
 
             $userData['access-token'] = $token->getToken();
@@ -123,7 +120,8 @@ class TombolaKernel extends \Symfony\Component\HttpKernel\Kernel {
     public function adminAction(\Symfony\Component\HttpFoundation\Request $request)
     {
         $user = $request->getSession()->get('user');
-        if ($user['nickname'] !== 'xavierleune') {
+
+        if (false === $user['admin']) {
             throw new \Symfony\Component\Security\Core\Exception\AccessDeniedException();
         }
 
