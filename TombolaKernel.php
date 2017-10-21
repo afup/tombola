@@ -124,7 +124,8 @@ class TombolaKernel extends \Symfony\Component\HttpKernel\Kernel {
     public function adminAction(\Symfony\Component\HttpFoundation\Request $request)
     {
         $user = $request->getSession()->get('user');
-        if ($user['nickname'] !== 'xavierleune') {
+
+        if (false === $user['admin']) {
             throw new \Symfony\Component\Security\Core\Exception\AccessDeniedException();
         }
 
