@@ -28,6 +28,7 @@ composer.phar:
 
 init: .docker-build
 	CURRENT_UID=$(CURRENT_UID) docker-compose run --rm cli make vendors
+	cat ./sql/2017-10-14-init.sql | ./docker/bin/mysql
 
 data:
 	mkdir -p docker/data
