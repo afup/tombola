@@ -85,11 +85,12 @@ class TombolaKernel extends \Symfony\Component\HttpKernel\Kernel {
             $user = $this->getAuth()->getResourceOwner($token);
             $data = $user->toArray();
 
-            $admin = false;
-
-            if ($user->getNickname() === 'xavierleune') {
-                //Todo check if the user has write access to afup/web
-                $admin = true;
+            $request = $this->getAuth()->getRequest('GET', "https://api.github.com/orgs/afup/public_members/" . $user->getNickName());
+            try {
+                $response = $this->getAuth()->getResponse($request);
+                $admin = $response->getStatusCode() == 204;
+            } catch (\Exception $e) {
+                // si on a une exception, l'utilisateur n'est pas un membre public de l'organisation ou n'existe pas
             }
 
             $userData = [
