@@ -1,0 +1,12 @@
+DirectoryIndex index.php
+
+RewriteEngine On
+
+Options FollowSymlinks
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteRule .? - [L]
+    RewriteRule .? %{ENV:BASE}/index.php [L]
+</IfModule>

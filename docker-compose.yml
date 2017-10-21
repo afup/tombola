@@ -1,0 +1,57 @@
+version: "2.1"
+
+services:
+  db:
+    build: ./docker/dockerfiles/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: afup
+      MYSQL_PASSWORD: afup
+      MYSQL_DATABASE: tombola
+    volumes:
+      - ./docker/data/mysql:/var/lib/mysql
+
+  apache:
+    build:
+      context: ./docker/dockerfiles/apache
+      args:
+        uid: ${CURRENT_UID:-1001}
+        gid: "1001"
+    volumes:
+      - ./:/var/www/html
+    links:
+      - db
+    environment:
+      MYSQL_HOST: "db"
+      MYSQL_LOGIN: "afup"
+      MYSQL_PASSWORD: "afup"
+      MYSQL_DATABASE: "tombola"
+
+  cli:
+    build:
+      context: ./docker/dockerfiles/cli
+      args:
+        uid: ${CURRENT_UID:-1001}
+        gid: "1001"
+    user: localUser
+    working_dir: /var/www/html
+    volumes:
+        - ./docker/data/composer:/home/localUser/.composer
+        - ./:/var/www/html
+    links:
+      - db
+    command: "false"
+
+  websocket:
+    build:
+      context: ./docker/dockerfiles/cli
+      args:
+        uid: ${CURRENT_UID:-1001}
+        gid: "1001"
+    user: localUser
+    working_dir: /var/www/html
+    volumes:
+        - ./:/var/www/html
+    links:
+      - db
+    command: "php /var/www/html/server.php"

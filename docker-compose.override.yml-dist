@@ -1,0 +1,16 @@
+version: "2.1"
+services:
+  db:
+    ports:
+      - "3916:3306"
+
+  apache:
+    ports:
+      - "9275:80"
+    environment:
+      GITHUB_CLIENT_ID: ""
+      GITHUB_CLIENT_SECRET: ""
+
+  websocket:
+    ports:
+      - "8090:8090"
