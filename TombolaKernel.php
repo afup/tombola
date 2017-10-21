@@ -17,7 +17,7 @@ class TombolaKernel extends \Symfony\Component\HttpKernel\Kernel {
     {
         $routes->add('/login', 'kernel:loginAction', 'login');
         $routes->add('/callback', 'kernel:callbackAction', 'callback');
-        $routes->add('/tombola', 'kernel:tombolaAction', 'tombola');
+        $routes->add('/', 'kernel:tombolaAction', 'tombola');
         $routes->add('/admin', 'kernel:adminAction', 'admin');
     }
 
@@ -109,7 +109,7 @@ class TombolaKernel extends \Symfony\Component\HttpKernel\Kernel {
 
         $this->getContainer()->get('app.user_repository')->insertUser($userData);
 
-        $redirect = '/tombola';
+        $redirect = '/';
         if ($admin) {
             $redirect = '/admin';
         }
