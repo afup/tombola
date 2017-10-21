@@ -21,6 +21,7 @@ services:
       - ./:/var/www/html
     links:
       - db
+      - websocket
     environment:
       MYSQL_HOST: "db"
       MYSQL_LOGIN: "afup"

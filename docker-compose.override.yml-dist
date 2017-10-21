@@ -11,7 +11,3 @@ services:
       GITHUB_CLIENT_ID: ""
       GITHUB_CLIENT_SECRET: ""
       AFUP_TOMBOLA_ADMIN_USERS: "xavierleune,agallou"
-
-  websocket:
-    ports:
-      - "8090:8090"
