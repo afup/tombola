@@ -80,7 +80,7 @@
 
 	}
 
-	var conn = new WebSocket('ws://{{ app.request.host }}:8090');
+	var conn = new WebSocket('wss://{{ app.request.host }}');
 	conn.onopen = function(e) {
 		conn.send(JSON.stringify({admin: 1, nickname: "{{ app.request.session.get('user').nickname }}", type: "connection"}));
 		console.log("Connection established!");

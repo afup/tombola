@@ -27,7 +27,7 @@
 <script>
     var messageEl = document.querySelector('p.message');
 
-	var conn = new WebSocket('ws://{{ app.request.host }}:8090');
+	var conn = new WebSocket('wss://{{ app.request.host }}');
 	conn.onopen = function(e) {
 		//console.log("Connection established!");
 		var user  = {
