@@ -33,7 +33,7 @@ Dépendances:
 
 Lancer un `make docker-up`, attendre que les services soient lancés puis effectuer un `make init` dans une autre fenêtre.
 
-La configuration des `GITHUB_CLIENT_ID` et `GITHUB_CLIENT_SECRET`, ainsi que les ports utilisés pourront être modifiés dans le fichier `docker-compose.override.yml`. 
+La configuration des `GITHUB_CLIENT_ID` et `GITHUB_CLIENT_SECRET`, `AFUP_TOMBOLA_ADMIN_USERS`, ainsi que les ports utilisés pourront être modifiés dans le fichier `docker-compose.override.yml`. 
 
 ### Installation manuelle
 
@@ -47,7 +47,7 @@ Tester:
 
 * **Installer les dépendances:** composer install
 * **Créer et importer la BDD:** Les fichiers à importer sont versionnés dans sql/.
-* **Lancer le webserver de PHP:** dans le répertoire public: `GITHUB_CLIENT_ID=[ClientId] GITHUB_CLIENT_SECRET="[ClientSecret]" MYSQL_HOST=[IP Mysql] MYSQL_LOGIN=[user mysql] MYSQL_PASSWORD=[Pwd mysql] MYSQL_PORT=[Port Mysql] MYSQL_DATABASE=[Nom de la bdd] php -S 127.0.0.1:8080`
+* **Lancer le webserver de PHP:** dans le répertoire public: `AFUP_TOMBOLA_ADMIN_USERS=[github_username_admin] GITHUB_CLIENT_ID=[ClientId] GITHUB_CLIENT_SECRET="[ClientSecret]" MYSQL_HOST=[IP Mysql] MYSQL_LOGIN=[user mysql] MYSQL_PASSWORD=[Pwd mysql] MYSQL_PORT=[Port Mysql] MYSQL_DATABASE=[Nom de la bdd] php -S 127.0.0.1:8080`
 * **Lancer le serveur de websocket:** à la racine du projet: `php server.php`
 
 

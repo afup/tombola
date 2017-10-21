@@ -69,6 +69,8 @@ class TombolaKernel extends \Symfony\Component\HttpKernel\Kernel {
 
     public function callbackAction(\Symfony\Component\HttpFoundation\Request $request)
     {
+        $adminUsers = explode(',', getenv('AFUP_TOMBOLA_ADMIN_USERS'));
+
         $session = $request->getSession();
         $session->start();
         if ($request->query->get('state') !== $session->get('oauth2state')) {
@@ -85,13 +87,7 @@ class TombolaKernel extends \Symfony\Component\HttpKernel\Kernel {
             $user = $this->getAuth()->getResourceOwner($token);
             $data = $user->toArray();
 
-            $request = $this->getAuth()->getRequest('GET', "https://api.github.com/orgs/afup/public_members/" . $user->getNickName());
-            try {
-                $response = $this->getAuth()->getResponse($request);
-                $admin = $response->getStatusCode() == 204;
-            } catch (\Exception $e) {
-                // si on a une exception, l'utilisateur n'est pas un membre public de l'organisation ou n'existe pas
-            }
+            $admin = in_array($user->getNickname(), $adminUsers);
 
             $userData = [
                 'provider' => 'github',
@@ -100,7 +96,7 @@ class TombolaKernel extends \Symfony\Component\HttpKernel\Kernel {
                 'nickname' => $user->getNickname(),
                 'email' => $user->getEmail(),
                 'avatar' => isset($data['avatar_url']) ? $data['avatar_url'] : null,
-                'admin' => $admin
+                'admin' => $admin,
             ];
 
             $userData['access-token'] = $token->getToken();
