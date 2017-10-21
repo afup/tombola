@@ -13,7 +13,7 @@
 </section>
 <div class="logo"><img src="/forumphp-2017-vecto.svg" /></div>
 <div class="buttons"><button id="play" onclick="draw();">Play</button><button id="reset" onclick="reset()">Reset</button></div>
-<h1 class="title"><span>0</span> participants</h1>
+<h1 class="title"><span class="title-count"></span> <span class="title-value">Aucun participant</span></h1>
 <h1 class="winner"></h1>
 </body>
 <script>
@@ -21,7 +21,8 @@
 	var users = {{ users|json_encode|raw }};
 	var usernames = [];
 
-	var usersCountEl = document.querySelector('h1.title span');
+	var usersCountEl = document.querySelector('h1.title span.title-count');
+	var usersCountTitleValueEl = document.querySelector('h1.title span.title-value');
 	var section = document.querySelector('section');
 
 	var baseImage = document.createElement('img');
@@ -41,7 +42,16 @@
         }
 
 		usersCount++;
-		usersCountEl.innerText = usersCount;
+
+        usersCountEl.innerText = (usersCount > 0) ? usersCount : '';
+
+        if (0 === usersCount) {
+            usersCountTitleValueEl.innerText = "Aucun participant";
+        } else if (1 === usersCount) {
+            usersCountTitleValueEl.innerText = "participant";
+        } else {
+            usersCountTitleValueEl.innerText = "participants";
+        }
 
 		var div = baseDiv.cloneNode(false);
 		var img = baseImage.cloneNode(false);
