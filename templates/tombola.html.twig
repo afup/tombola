@@ -27,7 +27,9 @@
 <script>
     var messageEl = document.querySelector('p.message');
 
-	var conn = new WebSocket('wss://{{ app.request.host }}');
+    {% set wsprotocol = app.request.isSecure ? 'wss' : 'ws' %}
+
+    var conn = new WebSocket('{{ wsprotocol }}://{{ app.request.host }}:{{ app.request.port }}');
 	conn.onopen = function(e) {
 		//console.log("Connection established!");
 		var user  = {

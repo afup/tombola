@@ -26,6 +26,8 @@ RUN a2enmod rewrite && \
     ln -s /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-enabled/000-default.conf && \
     echo "date.timezone=Europe/Paris" >> "/usr/local/etc/php/php.ini"
 
+RUN a2enmod proxy
+RUN a2enmod proxy_wstunnel
 
 # Install local user mapped to the host user uid
 ARG uid=1008
